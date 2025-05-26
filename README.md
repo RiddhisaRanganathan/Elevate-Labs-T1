@@ -17,8 +17,25 @@ This repository contains the results of a TCP SYN port scan performed on the loc
 | 143   | IMAP            | Internet Message Access Protocol for email       | Same risks as POP3 regarding unencrypted data and interception.               |
 | 3389  | MS-WBT-Server   | Microsoft Remote Desktop Protocol (RDP)          | Risk of unauthorized remote access if weak passwords or unpatched software.   |
 
-## Scan Results
-- Results saved in `scanresult.txt` (included in this repo).
+## Nmap Scan
 
+### Description
+A TCP SYN scan was performed on the IP range `192.168.50.0/24` using Nmap 7.97. This scan helped identify open ports and running services on devices in the network.
+### Procedure: 
+- The scan was done with the command: nmap -sS -oN scanresult.txt 192.168.50.0/24
+- The results are saved in the file `scanresult.txt` included in this repository.
+
+## Wireshark Capture
+
+### Description
+Packet capture was performed on the local network interface using Wireshark to analyze network traffic patterns, protocols in use, and identify any suspicious activity.
+
+### Procedure:
+- The captured packets were filtered and analyzed using Wireshark with the command: tcp || ip.src == <my_ip> || ip.dst == <my_ip>
+#### What packets are observed in this capture?
+- **SYN packets sent by the scanning device**: These are the initial connection requests sent to target ports to check if they are open.
+- **SYN-ACK packets from the target device**: If a target port is open, the device responds with a SYN-ACK, indicating readiness to establish a connection.
+- **RST packets sent by the scanning device**: Instead of completing the TCP handshake with an ACK, Nmap sends a RST (reset) packet to terminate the connection immediately. This keeps the scan "stealthy" and prevents full connection establishment.
+- 
 ## Privacy and Spoofing
 - IP addresses and MAC addresses are spoofed for security reasons.
