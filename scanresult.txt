@@ -1,0 +1,36 @@
+# Nmap 7.97 scan initiated Mon May 26 11:54:15 2025 as: nmap -sS -oN scanresult.txt 192.168.50.0/24
+
+Nmap scan report for 192.168.50.1
+Host is up (0.0102s latency).
+Not shown: 997 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+443/tcp  open  https
+MAC Address: AB:CD:EF:GH:IJ:KL
+
+Nmap scan report for 192.168.50.2
+Host is up (0.0086s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+25/tcp   open  smtp
+MAC Address: AB:CD:EF:GH:IJ:KL
+
+Nmap scan report for 192.168.50.3
+Host is up (0.021s latency).
+Not shown: 997 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+53/tcp   open  domain
+110/tcp  open  pop3
+MAC Address: AB:CD:EF:GH:IJ:KL
+
+Nmap scan report for 192.168.50.4
+Host is up (0.0013s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE
+143/tcp  open  imap
+3389/tcp open  ms-wbt-server
+MAC Address: AB:CD:EF:GH:IJ:KL
+
+# Nmap done at Mon May 26 11:56:20 2025 -- 256 IP addresses (4 hosts up) scanned in 65.26 seconds
